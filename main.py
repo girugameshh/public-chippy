@@ -35,8 +35,8 @@ class LilChippy(discord.Client):
             delta = current_time - self.last_played
             if self.client is not None \
                     and not self.client.is_playing() and delta.seconds > 3:
-                time.sleep(1.5)
                 audio = discord.FFmpegPCMAudio(executable="ffmpeg/bin/ffmpeg.exe", source="omg.mp3", options='-filter:a "volume=0.1"')
+                time.sleep(2)
                 self.client.play(audio)
                 self.last_played = current_time
 
